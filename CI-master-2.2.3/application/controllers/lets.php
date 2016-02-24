@@ -31,13 +31,13 @@ class Lets extends CI_Controller {
 		}
 		else
 		{
-			$this->load->model("user");
+			$this->load->model("let");
 			$get_user= $this->user->get_user($this->input->post());
 
 			if($get_user)
 			{
 				$this->session->set_userdata("user_session", $get_user);
-				redirect(base_url("users/profile"));
+				redirect(base_url("lets/dashboard"));
 			}
 			else
 			{
@@ -71,7 +71,7 @@ class Lets extends CI_Controller {
 			if ($insert_user)
 			{
 				$this->session->set_userdata("user_session", $user_input);
-				redirect(base_url("users/profile"));
+				redirect(base_url("/"));
 				
 			}
 			else
@@ -81,6 +81,10 @@ class Lets extends CI_Controller {
 			}
 		}
 
+	}
+
+	public function dashboard(){
+		$this->load->view('dashboard');
 	}
 
 

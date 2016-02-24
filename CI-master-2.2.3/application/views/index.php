@@ -50,7 +50,7 @@
 		}
 	?>	
 		
-		<form id="login" action="/users/process_login" method="post">
+		<form id="login" action="/lets/process_login" method="post">
 			<label for="username">Username: </label>
 			<input type="text" name="username"><br>
 			<label for="password">Password: </label>
@@ -67,7 +67,7 @@
 			echo $this->session->flashdata("registration_errors");
 		}
 	?>	
-		<form id="register" action="/users/process_registration" method="post">
+		<form id="register" action="/lets/process_registration" method="post">
 			<label for="first_name">First Name: </label>
 			<input type="text" name="first_name"><br>
 			<label for="last_name">Last Name: </label>
