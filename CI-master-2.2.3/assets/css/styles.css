@@ -1,0 +1,20 @@
+.container {
+	width: 1100px;
+}
+
+#main {
+	border: 2px solid black;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+#right {
+	border: 2px solid black;
+	display: inline-block;
+}
+
+#vents {
+	border: 2px solid black;
+	display: inline-block;
+	margin-top: 10px;
+}
