@@ -30,13 +30,13 @@ class Lets extends CI_Controller {
 		if($this->form_validation->run() === FALSE)
 		{
 			$this->session->set_flashdata("login_errors", validation_errors());
-			redirect(base_url());
+			redirect(base_url('lets/login_page'));
 
 		}
 		else
 		{
 			$this->load->model("let");
-			$get_user= $this->user->get_user($this->input->post());
+			$get_user= $this->let->get_user($this->input->post());
 
 			if($get_user)
 			{
@@ -68,9 +68,9 @@ class Lets extends CI_Controller {
 		}
 		else
 		{
-			$this->load->model("user");
+			$this->load->model("let");
 			$user_input = $this->input->post();
-			$insert_user = $this->user->insert_user($user_input);
+			$insert_user = $this->let->insert_user($user_input);
 
 			if ($insert_user)
 			{
