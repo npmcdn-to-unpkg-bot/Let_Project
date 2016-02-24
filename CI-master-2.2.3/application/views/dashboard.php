@@ -39,7 +39,7 @@
 							<ul class="nav navbar-nav navbar-left">
 									<li><a href="/lets/dashboard">Home</a>
 									</li>
-									<li><a href="/lets/#">Profile</a>
+									<li><a href="/lets/show_profile">Profile</a>
 
 										<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
 											<ul class="dropdown-menu">
