@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `letgo` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `letgo`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: letgo
@@ -114,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-24 15:26:29
+-- Dump completed on 2016-02-24 15:43:07
