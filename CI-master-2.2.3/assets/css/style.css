@@ -1,0 +1,110 @@
+
+.container {
+	width: 810px;
+	margin: 0 auto;
+}
+
+.clear {
+	clear: both;
+}
+
+.red {
+	color: red;
+	display: block;
+}
+
+.green {
+	color: green;
+	display: block;
+}
+
+.success {
+	background: green;
+	color:#fff;
+	padding: 12px 20px;
+}
+
+.error {
+	background: red;
+	color: #fff;
+	padding: 12px 20px;
+}
+
+.gold {
+	float: left;
+	margin: 20px 0;
+}
+
+.restart {
+	float: left;
+	margin: 20px 0 20px 30px;
+}
+
+.building {
+	border: 1px solid;
+	width: 179px;
+	height: 140px;
+	float: left;
+	margin-right: 20px;
+	text-align: center;
+}
+
+.log {
+	margin-top: 20px;
+}
+
+#log {
+	border: 1px solid;
+	font-size: 13px;
+	width: 780px;
+	height: 150px;
+	overflow-y: auto;
+}
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(235, 168, 255, 1);
+		font-size: 25px;
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: #fcf7f7px;
+    background-color: rgba(181, 31, 219, 1);
+    background: -webkit-linear-gradient(top, rgba(117, 56, 114, 1) 0%, rgba(181, 31, 219, 1) 100%);
+    background: linear-gradient(to bottom, rgba(117, 56, 114, 1) 0%, rgba(181, 31, 219, 1) 100%);
+    border-width: #c6a2c7px;
+    border-radius: #fab8ffpx;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(240, 195, 236, 1);
+    background-color: rgba(181, 31, 219, 1);
+    background: -webkit-linear-gradient(top, rgba(117, 56, 114, 1) 0%, rgba(181, 31, 219, 1) 100%);
+    background: linear-gradient(to bottom, rgba(117, 56, 114, 1) 0%, rgba(181, 31, 219, 1) 100%);
+		font-size: 25px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(51, 51, 51, 1);
+    background-color: rgba(227, 166, 227, 1);
+    background: -webkit-linear-gradient(top, rgba(248, 248, 248, 0) 0%, rgba(227, 166, 227, 1) 100%);
+    background: linear-gradient(to bottom, rgba(248, 248, 248, 0) 0%, rgba(227, 166, 227, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(85, 85, 85, 1);
+    background-color: rgba(237, 97, 255, 1);
+    background: -webkit-linear-gradient(top, rgba(231, 231, 231, 1) 0%, rgba(237, 97, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(231, 231, 231, 1) 0%, rgba(237, 97, 255, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #ed61ff;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #ed61ff;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ed61ff;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #b51fdb;
+}
