@@ -73,3 +73,9 @@
 	display: inline-block;
 	margin-top: 10px;
 }
+
+#login_button {
+	position: fixed;
+	top: 80%;
+	right: 45%;
+}

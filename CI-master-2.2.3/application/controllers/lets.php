@@ -17,6 +17,10 @@ class Lets extends CI_Controller {
 		$this->load->view('welcome');
 	}
 
+	public function login_page(){
+		$this->load->view('index');
+	}
+
 	public function process_login()
 	{
 		$this->load->library("form_validation");
