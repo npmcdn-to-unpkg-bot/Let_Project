@@ -14,7 +14,7 @@ class Lets extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('index');
+		$this->load->view('welcome');
 	}
 
 	public function process_login()

@@ -3,16 +3,6 @@
 <head>
 	<meta charset='utf-8'>
 	<title>Dashboard</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
-	<script src="js/jquery.responsiveiframe.js"></script>
-	<script src="js/ios-orientationchange-fix.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$(".dropdown-toggle").dropdown();
-		});
-
-	</script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -27,8 +17,16 @@
 	</script>
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
+	<script src="js/jquery.responsiveiframe.js"></script>
+	<script src="js/ios-orientationchange-fix.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".dropdown-toggle").dropdown();
+		});
 
-
+	</script>
 </head>
 <header>
 	<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
