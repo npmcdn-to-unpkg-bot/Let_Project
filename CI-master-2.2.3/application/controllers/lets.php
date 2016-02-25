@@ -75,7 +75,7 @@ class Lets extends CI_Controller {
 			if ($insert_user)
 			{
 				$this->session->set_userdata("user_session", $user_input);
-				redirect(base_url("/lets/dashboard"));
+				redirect(base_url("/"));
 				
 			}
 			else
@@ -91,14 +91,6 @@ class Lets extends CI_Controller {
 		$this->load->view('dashboard');
 	}
 
-	public function view_profile(){
-		$this->load->view('user_profile');
-	}
-
-	public function logout(){
-		$this->session->sess_destroy();
-		redirect('/');
-	}
 
 }
 
