@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-
+/*welcome page begin dont touch*/
   body {
     font-family: Calibri, sans-serif; /*Insert our Font choice here*/
   }
@@ -51,6 +51,8 @@
     color: #aaa;
   }
 
+/* welcome page end */
+
 
 .container {
 	width: 1100px;
@@ -78,9 +80,11 @@
 #twitter {
   border: 2px solid black;
   display: inline-block;
+  width: 400px;
+  margin-right: 0px;
   position: fixed;
   background-color: #8E44AD;
   padding: 10px;
-  top: 20%;
-  right: 15%;
+  top: 11%;
+  right: 5%;
 }

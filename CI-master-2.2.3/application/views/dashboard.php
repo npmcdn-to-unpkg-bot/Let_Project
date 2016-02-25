@@ -38,23 +38,24 @@
 					</div>
 					<div class="collapse navbar-collapse navbar-menubuilder">
 							<ul class="nav navbar-nav navbar-left">
-									<li><a href="/lets/dashboard">Home</a>
-									</li>
-									<li><a href="/lets/view_profile">Profile</a>
+								<li><a href="/lets/dashboard">Home</a>
+								</li>
+								<li><a href="/lets/view_profile">Profile</a>
 
-										<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Relationships</a></li>
-												<li><a href="#">Family</a></li>
-												<li><a href="#">Work</a></li>
-												<li><a href="#">School</a></li>
-												<li><a href="#">Money</a></li>
-											</ul></li>
+								<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Relationships</a></li>
+										<li><a href="#">Family</a></li>
+										<li><a href="#">Work</a></li>
+										<li><a href="#">School</a></li>
+										<li><a href="#">Money</a></li>
+										<li><a href="#">Miscellaneous</a></li>
+									</ul></li>
 							</ul>
 
 			<ul class="nav navbar-nav navbar-right">
 									</li>
-									<li><a href="/lets/view_profile">Hello, User</a>
+									<li><a href="/lets/view_profile">Hello, <?= $user_session['username'] ?></a>
 									</li>
 									<li><a href="/lets/logout">Sign Out</a>
 									</li>
@@ -67,7 +68,7 @@
 
 	<div class='container'>
 
-		<div id="main" class="col-md-7">
+		<div id="main" class="col-md-6">
 			<h1>Main complain page</h1>
 			 <form action="#" method="POST" role="form" class="col-md-6">
 				<div class="form-group">
@@ -93,23 +94,20 @@
 
 		</div>
 
-		<div id="right" class="col-md-4">
-			<div id="twitter">
-				<h1>Twitter Feed</h1>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-			</div>
-
+		<div id="twitter">
+			<h1>Twitter Feed</h1>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
 		</div>
 
 	</div>
