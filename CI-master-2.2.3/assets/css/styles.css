@@ -63,11 +63,6 @@
 	display: inline-block;
 }
 
-#right {
-	border: 2px solid black;
-	display: inline-block;
-}
-
 #vents {
 	border: 2px solid black;
 	display: inline-block;
@@ -78,4 +73,14 @@
 	position: fixed;
 	top: 80%;
 	right: 45%;
+}
+
+#twitter {
+  border: 2px solid black;
+  display: inline-block;
+  position: fixed;
+  background-color: #8E44AD;
+  padding: 10px;
+  top: 20%;
+  right: 15%;
 }
