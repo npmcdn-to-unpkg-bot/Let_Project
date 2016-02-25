@@ -38,18 +38,19 @@
 					</div>
 					<div class="collapse navbar-collapse navbar-menubuilder">
 							<ul class="nav navbar-nav navbar-left">
-									<li><a href="/lets/dashboard">Home</a>
-									</li>
-									<li><a href="/lets/view_profile">Profile</a>
+								<li><a href="/lets/dashboard">Home</a>
+								</li>
+								<li><a href="/lets/view_profile">Profile</a>
 
-										<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Relationships</a></li>
-												<li><a href="#">Family</a></li>
-												<li><a href="#">Work</a></li>
-												<li><a href="#">School</a></li>
-												<li><a href="#">Money</a></li>
-											</ul></li>
+								<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Relationships</a></li>
+										<li><a href="#">Family</a></li>
+										<li><a href="#">Work</a></li>
+										<li><a href="#">School</a></li>
+										<li><a href="#">Money</a></li>
+										<li><a href="#">Miscellaneous</a></li>
+									</ul></li>
 							</ul>
 
 			<ul class="nav navbar-nav navbar-right">
