@@ -74,10 +74,10 @@
 				<div class="form-group">
 					<label for="sel1">What do you need to vent about?</label>
 					<select class="form-control" id="sel1">
-						<option>Work</option>
-						<option>School</option>
 						<option>Relationships</option>
 						<option>Family</option>
+						<option>Work</option>
+						<option>School</option>
 						<option>Money</option>
 						<option>Miscellaneous</option>
 					</select>

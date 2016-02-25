@@ -21,6 +21,10 @@ class Let extends CI_Model
 
 	}
 
+	public function get_user_by_id($id){
+		
+	}
+
 }
 
 ?>
