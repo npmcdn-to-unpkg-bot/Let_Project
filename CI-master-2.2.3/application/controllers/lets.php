@@ -104,10 +104,6 @@ class Lets extends CI_Controller {
 		$this->load->view('edit_profile', $this->view_data);
 	}
 
-	public function edit_profile($id){
-		$user_edit = $this->load->let->get_user_by_id($id)
-	}
-
 }
 
 /* End of file welcome.php */
