@@ -88,11 +88,12 @@ class Lets extends CI_Controller {
 	}
 
 	public function dashboard(){
-		$this->load->view('dashboard');
+		$this->load->view('dashboard', $this->view_data);
 	}
 
+
 	public function view_profile(){
-		$this->load->view('user_profile');
+		$this->load->view('user_profile', $this->view_data);
 	}
 
 	public function logout(){
@@ -101,7 +102,11 @@ class Lets extends CI_Controller {
 	}
 
 	public function edit_page(){
-		$this->load->view('edit_profile');
+		$this->load->view('edit_profile', $this->view_data);
+	}
+
+	public function edit_profile(){
+		
 	}
 
 }

@@ -54,7 +54,7 @@
 
 			<ul class="nav navbar-nav navbar-right">
 									</li>
-									<li><a href="/lets/view_profile">Hello, User</a>
+									<li><a href="/lets/view_profile">Hello, <?= $user_session['username'] ?></a>
 									</li>
 									<li><a href="/lets/logout">Sign Out</a>
 									</li>
