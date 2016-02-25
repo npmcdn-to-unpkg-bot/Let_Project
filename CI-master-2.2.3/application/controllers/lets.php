@@ -64,7 +64,7 @@ class Lets extends CI_Controller {
 		if($this->form_validation->run() === FALSE)
 		{
 			$this->session->set_flashdata("registration_errors", validation_errors());
-			redirect(base_url());
+			redirect(base_url('lets/dashboard'));
 		}
 		else
 		{
