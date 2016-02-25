@@ -67,7 +67,7 @@
 
 	<div class='container'>
 
-		<div id="main" class="col-md-7">
+		<div id="main" class="col-md-6">
 			<h1>Main complain page</h1>
 			 <form action="#" method="POST" role="form" class="col-md-6">
 				<div class="form-group">
@@ -93,23 +93,20 @@
 
 		</div>
 
-		<div id="right" class="col-md-4">
-			<div id="twitter">
-				<h1>Twitter Feed</h1>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-			</div>
-
+		<div id="twitter">
+			<h1>Twitter Feed</h1>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
+			<p>TWEET HERE</p>
 		</div>
 
 	</div>

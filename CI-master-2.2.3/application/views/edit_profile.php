@@ -1,24 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-	<title>User Profile</title>
-	<meta charset="utf-8">
-	<style type="text/css">
-
-	body {
-    	background: url("/assets/pix/pink.png");
-    }
-	</style>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
-	<script src="js/jquery.responsiveiframe.js"></script>
-	<script src="js/ios-orientationchange-fix.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$(".dropdown-toggle").dropdown();
-		});
-
-	</script>
+	<meta charset='utf-8'>
+	<title>Dashboard</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -33,6 +17,17 @@
 	</script>
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
+	<script src="js/jquery.responsiveiframe.js"></script>
+	<script src="js/ios-orientationchange-fix.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".dropdown-toggle").dropdown();
+		});
+
+	</script>
+	<link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
 </head>
 <header>
 	<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
@@ -45,6 +40,8 @@
 							<ul class="nav navbar-nav navbar-left">
 									<li><a href="/lets/dashboard">Home</a>
 									</li>
+									<li><a href="/lets/view_profile">Profile</a>
+
 										<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
 											<ul class="dropdown-menu">
 												<li><a href="#">Relationships</a></li>
@@ -67,16 +64,30 @@
 	</div>
 </header>
 <body>
-	<h2>Welcome <?= $user_session['first_name']; ?>!</h2>
-	<a href="/lets/edit_page" class="btn btn-default">Edit Your Profile</a>
-
-	<h3>User Information: </h3>
-	<p>First Name: <?= $user_session['first_name'] ?></p>
-	<p>Last Name: <?= $user_session['last_name'] ?></p>
-	<p>Username: <?= $user_session['username'] ?></p>
-	<p>Email Address: <?= $user_session['email'] ?></p>
-
-	<h2>Your Vents: </h2>
+	<div class="container">
+		<h1>Edit Profile</h1>
+		<br>
+		<form action="#" method="POST" role="form" class="col-md-6">
+		    <div class="form-group">
+		      <label for="name">First Name:</label>
+		      <input type="text" class="form-control" id="first_name" name="first_name" value="">
+		    </div>
+		    <div class="form-group">
+		      <label for="name">Last Name:</label>
+		      <input type="text" class="form-control" id="last_name" name="last_name" value="">
+		    </div>
+		    <div class="form-group">
+		      <label for="description">Username:</label>
+		      <input type="text" class="form-control" id="username" name="username" value="">
+		    </div>
+		    <div class="form-group">
+		      <label for="email">Email:</label>
+		      <input type="email" class="form-control" id="email" name="email" value="">
+		    </div>
+		    <button type="submit" class="btn btn-block btn-default">Update</button>
+		</form>
+		<br>
+		<br>
+	</div>
 </body>
-
 </html>

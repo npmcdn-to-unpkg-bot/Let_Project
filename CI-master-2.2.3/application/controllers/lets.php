@@ -100,6 +100,10 @@ class Lets extends CI_Controller {
 		redirect('/');
 	}
 
+	public function edit_page(){
+		$this->load->view('edit_profile');
+	}
+
 }
 
 /* End of file welcome.php */
