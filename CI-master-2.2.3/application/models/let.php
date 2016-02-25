@@ -22,7 +22,9 @@ class Let extends CI_Model
 	}
 
 	public function get_user_by_id($id){
-		
+		$edit_user = "SELECT * FROM users WHERE id = ?";
+		$values = array($id);
+		return $this->db->query($query, $values)->row_array();
 	}
 
 }
