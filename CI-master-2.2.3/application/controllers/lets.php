@@ -91,9 +91,6 @@ class Lets extends CI_Controller {
 		$this->load->view('dashboard', $this->view_data);
 	}
 
-<<<<<<< HEAD
-=======
-
 	public function view_profile(){
 		$this->load->view('user_profile', $this->view_data);
 	}
@@ -102,7 +99,6 @@ class Lets extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('/');
 	}
->>>>>>> b9b875333f0e8bd53d069e4b26cef8a5d198914a
 
 	public function edit_page(){
 		$this->load->view('edit_profile', $this->view_data);
