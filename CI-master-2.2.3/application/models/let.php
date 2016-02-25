@@ -21,6 +21,7 @@ class Let extends CI_Model
 
 	}
 
+
 	public function get_user_by_id($id){
 		$get_user= "SELECT * from users WHERE id=?";
 		$values= array($id);
@@ -34,6 +35,7 @@ class Let extends CI_Model
 		return $this->db->query($update, $values);
 
 	}
+
 
 
 }
