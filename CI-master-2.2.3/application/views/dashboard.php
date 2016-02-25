@@ -27,6 +27,7 @@
 		});
 
 	</script>
+	<link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
 </head>
 <header>
 	<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
@@ -39,7 +40,7 @@
 							<ul class="nav navbar-nav navbar-left">
 									<li><a href="/lets/dashboard">Home</a>
 									</li>
-									<li><a href="/lets/show_profile">Profile</a>
+									<li><a href="/lets/view_profile">Profile</a>
 
 										<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
 											<ul class="dropdown-menu">
@@ -53,9 +54,9 @@
 
 			<ul class="nav navbar-nav navbar-right">
 									</li>
-									<li><a href="Profile">Hello, User</a>
+									<li><a href="/lets/view_profile">Hello, User</a>
 									</li>
-									<li><a href="categories">Sign Out</a>
+									<li><a href="/lets/logout">Sign Out</a>
 									</li>
 							</ul>
 					</div>
@@ -93,18 +94,6 @@
 		</div>
 
 		<div id="right" class="col-md-4">
-			<h1>Categories</h1>
-			<div id="categories">
-				 <div class="list-group">
-				  <a href="#" class="list-group-item">Work</a>
-				  <a href="#" class="list-group-item">School</a>
-				  <a href="#" class="list-group-item">Relationships</a>
-				  <a href="#" class="list-group-item">Family</a>
-				  <a href="#" class="list-group-item">Money</a>
-				  <a href="#" class="list-group-item">Miscellaneous</a>
-				</div>
-			</div>
-
 			<div id="twitter">
 				<h1>Twitter Feed</h1>
 				<p>TWEET HERE</p>
