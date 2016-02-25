@@ -22,8 +22,19 @@ class Let extends CI_Model
 	}
 
 	public function get_user_by_id($id){
-		
+		$get_user= "SELECT * from users WHERE id=?";
+		$values= array($id);
+		$this->db->query($edit_user, $id);
+		return $this->db->edit_id()->row_array();
 	}
+
+	public function edit_profile($user_data){
+		$update= "UPDATE users SET first_name=?, last_name=?, username=?, email=? WHERE id=?";
+		$values= array($user_data['first_name'], $user_data['last_name'], $user_data['username'], $user_data['email']);
+		return $this->db->query($update, $values);
+
+	}
+
 
 }
 

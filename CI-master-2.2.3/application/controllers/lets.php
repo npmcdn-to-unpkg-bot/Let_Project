@@ -104,8 +104,10 @@ class Lets extends CI_Controller {
 		$this->load->view('edit_profile', $this->view_data);
 	}
 
-	public function edit_profile(){
-		
+	public function edit_profile($id){
+		$edit_user=$this->load->model("let");
+
+		redirect("lets/view_profile");
 	}
 
 }

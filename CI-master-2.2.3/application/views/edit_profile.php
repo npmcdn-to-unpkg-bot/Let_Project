@@ -67,22 +67,22 @@
 	<div class="container">
 		<h1>Edit Profile</h1>
 		<br>
-		<form action="#" method="POST" role="form" class="col-md-6">
+		<form action="lets/edit_profile/<?= $user_session['id'] ?>" method="POST" role="form" class="col-md-6">
 		    <div class="form-group">
 		      <label for="name">First Name:</label>
-		      <input type="text" class="form-control" id="first_name" name="first_name" value="">
+		      <input type="text" class="form-control" id="first_name" name="first_name" value="<?= $user_session['first_name'] ?>">
 		    </div>
 		    <div class="form-group">
 		      <label for="name">Last Name:</label>
-		      <input type="text" class="form-control" id="last_name" name="last_name" value="">
+		      <input type="text" class="form-control" id="last_name" name="last_name" value="<?= $user_session['last_name'] ?>">
 		    </div>
 		    <div class="form-group">
 		      <label for="description">Username:</label>
-		      <input type="text" class="form-control" id="username" name="username" value="">
+		      <input type="text" class="form-control" id="username" name="username" value="<?= $user_session['username'] ?>">
 		    </div>
 		    <div class="form-group">
 		      <label for="email">Email:</label>
-		      <input type="email" class="form-control" id="email" name="email" value="">
+		      <input type="email" class="form-control" id="email" name="email" value="<?= $user_session['email'] ?>">
 		    </div>
 		    <button type="submit" class="btn btn-block btn-default">Update</button>
 		</form>
