@@ -58,6 +58,9 @@
 
 			<ul class="nav navbar-nav navbar-right">
 									</li>
+									<li><h4 style="color:purple;"><b> Today is, <?= date("jS o, F Y"); ?></b></h4>
+									</li>
+									</li>
 									<li><a href="/lets/view_profile">Hello, <?= $this->session->userdata('username') ?></a>
 									</li>
 									<li><a href="/lets/logout">Sign Out</a>
