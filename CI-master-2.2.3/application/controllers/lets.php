@@ -27,15 +27,26 @@ class Lets extends CI_Controller {
 
 	public function process_login()
 	{
-		$username = $this->input->post('username');
-		$this->load->model("let");
-		$get_user = $this->let->get_user($username);
-		$user = array(
-			'users_id' => $get_user['id'],
-			'username' => $get_user['username'],
-		);
-		$this->session->set_userdata($user);
-		redirect('/lets/dashboard', $user);
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+
+		if($this->form_validation->run() === FALSE){
+			$this->session->set_flashdata('login_errors', validation_errors());
+			redirect('/lets/login_page');
+		}
+
+		else{
+			$username = $this->input->post('username');
+			$this->load->model("let");
+			$get_user = $this->let->get_user($username);
+			$user = array(
+				'users_id' => $get_user['id'],
+				'username' => $get_user['username'],
+			);
+			$this->session->set_userdata($user);
+			redirect('/lets/dashboard', $user);
+		}
 	}
 
 	public function process_registration()
@@ -85,11 +96,13 @@ class Lets extends CI_Controller {
 		$this->load->view("dashboard", array('all_vents' => $all_vents));
 	}
 
-	public function view_profile(){
-		// $this->load->model('let');
-		// $user_data = $this->let->get_user_by_id($id);
-
-		$this->load->view('user_profile');
+	public function view_profile($id){
+		$this->load->model('let');
+		$user = $this->let->get_user_by_id($id);
+		$data = array(
+					'user' => $user
+					);
+		$this->load->view('user_profile', $data);
 	}
 
 
@@ -113,8 +126,6 @@ class Lets extends CI_Controller {
 
 	public function get_vents(){
 		$this->load->model("let");
-		
-		$this->load->view("dashboard", array("all_vents"=>$all_vents));
 		// redirect('lets/dashboard', array("all_vents" => $all_vents));
 	}
 
