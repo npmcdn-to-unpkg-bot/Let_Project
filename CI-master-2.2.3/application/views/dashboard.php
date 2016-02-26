@@ -52,10 +52,10 @@
 										<li><a href="#">Miscellaneous</a></li>
 									</ul></li>
 							</ul>
-
+<?php echo var_dump($this->session->userdata('username')) ?>
 			<ul class="nav navbar-nav navbar-right">
 									</li>
-									<li><a href="/lets/view_profile">Hello, <?= $user_session['username'] ?></a>
+									<li><a href="/lets/view_profile">Hello, <?= $this->session->userdata('username') ?></a>
 									</li>
 									<li><a href="/lets/logout">Sign Out</a>
 									</li>
@@ -70,26 +70,33 @@
 
 		<div id="main" class="col-md-6">
 			<h1>Main complain page</h1>
-			 <form action="#" method="POST" role="form" class="col-md-6">
-				<div class="form-group">
-					<label for="sel1">What do you like to vent about?</label>
-					<select class="form-control" id="sel1">
-						<option>Relationships</option>
-						<option>Family</option>
-						<option>Work</option>
-						<option>School</option>
-						<option>Money</option>
-						<option>Miscellaneous</option>
-					</select>
-				</div>
-				<div class="form-group">
-			  		<textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
-				</div>
-			    <button type="submit" class="btn btn-danger">Vent</button>
+			 <form action="/lets/add" method="POST" role="form" class="col-md-6">
+					<div class="form-group">
+						<label for="sel1">What do you like to vent about?</label>
+						<input type="select" list="category" name="category">
+						<select name= "category">
+							<option>Relationships></option>
+							<option>Family</option>
+							<option>Work</option>
+							<option>School</option>
+							<option>Money</option>
+							<option>Miscellaneous</option>
+						</select>
+					</div>
+					<div class="form-group">
+				  		<textarea class="form-control" name="vent" rows="5"></textarea>
+					</div>
+				    <button type="submit" class="btn btn-danger">Vent</button>
 			</form>
 
 			<div id="vents">
-				<h1>VENTS ARE GONNA GO HERE</h1>
+				 <?php foreach ($all_vents as $vent) { ?>
+					 <p><?= $vent['username'] ?></p>
+					 <p><?= $vent['content'] ?></p>
+					 <p><?= $vent['category'] ?></p>
+					 <p><?= $vent['created_at'] ?></p>
+
+				 <?php } ?>
 			</div>
 
 		</div>
