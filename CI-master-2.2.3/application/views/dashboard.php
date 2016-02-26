@@ -75,7 +75,7 @@
 						<label for="sel1">What do you like to vent about?</label>
 						<input type="select" list="category" name="category">
 						<select name= "category">
-							<option>Relationships></option>
+							<option>Relationships</option>
 							<option>Family</option>
 							<option>Work</option>
 							<option>School</option>
