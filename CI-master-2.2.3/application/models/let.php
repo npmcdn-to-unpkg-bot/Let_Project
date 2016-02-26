@@ -19,12 +19,12 @@ class Let extends CI_Model
 	}
 
 
-	public function get_user_by_id($user_data, $id){
-		$get_user= "SELECT * from users WHERE id=?";
-		$values= array($id);
-		$this->db->query($edit_user, $id);
-		return $this->db->edit_id()->row_array();
-	}
+	// public function get_user_by_id($id){
+	// 	$get_user = "SELECT * from users WHERE id=?";
+	// 	$values= array($id);
+	// 	$this->db->query($get_user, $id);
+	// 	return $this->db->edit_id()->row_array();
+	// }
 
 	public function edit_profile($user_data, $id){
 		$update= "UPDATE users SET first_name=?, last_name=?, username=?, email=? WHERE id=?";
@@ -32,15 +32,25 @@ class Let extends CI_Model
 		return $this->db->query($update, $values);
 
 	}
+
 	public function get_all_vents(){
-		return $this->db->query("SELECT username, content, vents.created_at FROM users LEFT JOIN vents ON users.id = vents.users_id")->result_array();
+		return $this->db->query("SELECT username, content, vents.created_at, category FROM users JOIN vents ON users.id = vents.users_id;")->result_array();
 	}
+<<<<<<< HEAD
 	public function show($id)
 	{
 			$this->load->model("let"); //loads the model
 			$vents = $this->Course->get_all_vents();  //calls the get_course_by_id method
 			var_dump($vents);
+=======
+
+	public function show($id){
+		$this->load->model("let"); //loads the model
+		$vents = $this->Course->get_all_vents();  //calls the get_course_by_id method
+		var_dump($vents);
+>>>>>>> b687c4f3bce55c29bc3aa68a328d5508ae76cd1d
 	}
+
 	public function add_vent($vents){
 		$query = "INSERT INTO vents ( content, category, created_at, updated_at, users_id) VALUES (?,?,?,?,?)";
     $values = array($vents['content'], $vents['category'], date("Y-m-d"), date("Y-m-d"), $vents['users_id']);

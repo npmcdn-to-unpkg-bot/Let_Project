@@ -52,7 +52,6 @@
 										<li><a href="#">Miscellaneous</a></li>
 									</ul></li>
 							</ul>
-<?php echo var_dump($this->session->userdata('username')) ?>
 			<ul class="nav navbar-nav navbar-right">
 									</li>
 									<li><a href="/lets/view_profile">Hello, <?= $this->session->userdata('username') ?></a>
@@ -73,7 +72,7 @@
 			 <form action="/lets/add" method="POST" role="form" class="col-md-6">
 					<div class="form-group">
 						<label for="sel1">What do you like to vent about?</label>
-						<input type="select" list="category" name="category">
+
 						<select name= "category">
 							<option>Relationships</option>
 							<option>Family</option>
@@ -91,10 +90,10 @@
 
 			<div id="vents">
 				 <?php foreach ($all_vents as $vent) { ?>
-					 <p><?= $vent['username'] ?></p>
-					 <p><?= $vent['content'] ?></p>
-					 <p><?= $vent['category'] ?></p>
-					 <p><?= $vent['created_at'] ?></p>
+					 <h4><?= $vent['username'] ?></h4>
+					 <h5><?= $vent['content'] ?></h5>
+					 <p>Category: <?= $vent['category'] ?></p>
+					 <p>Created at: <?= $vent['created_at'] ?></p>
 
 				 <?php } ?>
 			</div>

@@ -10,9 +10,13 @@ class Lets extends CI_Controller {
 		// $this->output->enable_profiler();
 		$user =  $this->session->userdata("user_session");
 
-		$data = array("id" => $user['id'], "username"=> $user['id']);
+		$data = array("id" => $user['id'], "username"=> $user['username']);
 
+<<<<<<< HEAD
 		$this->view_data['user_session'] = $this->user_session;
+=======
+		$this->view_data['user_session'] = $this->user_session; 
+>>>>>>> b687c4f3bce55c29bc3aa68a328d5508ae76cd1d
 	}
 
 
@@ -51,7 +55,7 @@ class Lets extends CI_Controller {
 		if($this->form_validation->run() === FALSE)
 		{
 			$this->session->set_flashdata("registration_errors", validation_errors());
-			redirect(base_url('lets/login_page'));
+			redirect(base_url('/lets/login_page'));		
 		}
 		else
 		{
@@ -64,9 +68,6 @@ class Lets extends CI_Controller {
 				$this->session->set_userdata("user_session", $user_input);
 
 				redirect(base_url("lets/dashboard"));
-
-
-
 			}
 			else
 			{
@@ -78,17 +79,20 @@ class Lets extends CI_Controller {
 	}
 
 	public function dashboard(){
-		$this->load->view('dashboard', $this->view_data);
+		$this->load->model("let");
+			$vents = array(
+					'content' => $this->input->post("vent"),
+					'category' => $this->input->post("category"),
+					'username'=> $this->session->userdata['username'],
+					'users_id' => $this->session->userdata['users_id']
+			);
+			$add_vent = $this->let->add_vent($vents);
+			$all_vents = $this->let->get_all_vents();
+			$this->load->view("dashboard", array('all_vents' => $all_vents), $this->view_data);
 	}
 
 	public function view_profile(){
 		$this->load->view('user_profile', $this->view_data);
-	}
-
-	public function get_user($id){
-		$this->load->model("let");
-		$get_user_data = $this->let->get_user_by_id($id);
-
 	}
 
 
@@ -104,28 +108,39 @@ class Lets extends CI_Controller {
 		// $get_user_data = $this->let->get_user_by_id($user_data, $id);
 		redirect("lets/view_profile");
 	}
+
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect('/');
 	}
+
 	public function get_vents(){
 		$this->load->model("let");
-		$all_vents = $this->let->get_all_vents();
-		$this->load->view("dashboard", array("all_vents" => $all_vents));
+		
+		$this->load->view("dashboard", array("all_vents"=>$all_vents));
+		// redirect('lets/dashboard', array("all_vents" => $all_vents));
 	}
-	public function add()
-	{
-			$this->load->model("let");
-			$vents = array(
-					'content' => $this->input->post("vent"),
-					'category' => $this->input->post("category"),
-					'username'=> $this->session->userdata['username'],
-					'users_id' => $this->session->userdata['users_id']
-			);
-			$add_vent = $this->let->add_vent($vents);
-			redirect("/lets/get_vents", $vents);
 
-	}
+	public function add(){
+		$this->load->library("form_validation");
+		$this->form_validation->set_rules("vent", "Vent", "trim|required");
+		
+		if($this->form_validation->run() === FALSE){
+			$this->session->set_flashdata("registration_errors", validation_errors());
+			redirect(base_url('/lets/dashboard'));		
+		}
+		else{
+		$this->load->model("let");
+		$vents = array(
+				'content' => $this->input->post("vent"),
+				'category' => $this->input->post("category"),
+				'username'=> $this->session->userdata['username'],
+				'users_id' => $this->session->userdata['users_id']
+		);
+		$add_vent = $this->let->add_vent($vents);
+		redirect('lets/dashboard');
+		}
+}
 
 
 }
