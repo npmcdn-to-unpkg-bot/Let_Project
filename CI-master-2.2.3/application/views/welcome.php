@@ -31,7 +31,7 @@
 <body>
   <div class="background-wrap">
     <video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
-        <source src="/assets/pix/CliffAngry.mp4" type="video/mp4">
+        <source src="/assets/pix/SonyaFrustrated.mp4" type="video/mp4">
           Video not supported
     </video>
   </div>
