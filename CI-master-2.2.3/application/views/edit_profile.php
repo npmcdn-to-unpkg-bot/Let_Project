@@ -54,7 +54,7 @@
 
 			<ul class="nav navbar-nav navbar-right">
 									</li>
-									<li><a href="/lets/view_profile">Hello, <?= $user_session['username'] ?></a>
+									<li><a href="/lets/view_profile">Hello, <?= $this->session->userdata('username') ?></a>
 									</li>
 									<li><a href="/lets/logout">Sign Out</a>
 									</li>
@@ -67,22 +67,22 @@
 	<div class="container">
 		<h1>Edit Profile</h1>
 		<br>
-		<form action="edit_profile/<?= $user_session['id'] ?>" method="POST" role="form" class="col-md-6">
+		<form action="edit_profile/<?= $this->session->userdata('id') ?>" method="POST" role="form" class="col-md-6">
 		    <div class="form-group">
 		      <label for="name">First Name:</label>
-		      <input type="text" class="form-control" id="first_name" name="first_name" value="<?= $user_session['first_name'] ?>">
+		      <input type="text" class="form-control" id="first_name" name="first_name" value="">
 		    </div>
 		    <div class="form-group">
 		      <label for="name">Last Name:</label>
-		      <input type="text" class="form-control" id="last_name" name="last_name" value="<?= $user_session['last_name'] ?>">
+		      <input type="text" class="form-control" id="last_name" name="last_name" value="">
 		    </div>
 		    <div class="form-group">
 		      <label for="description">Username:</label>
-		      <input type="text" class="form-control" id="username" name="username" value="<?= $user_session['username'] ?>">
+		      <input type="text" class="form-control" id="username" name="username" value="<?= $this->session->userdata('username') ?>">
 		    </div>
 		    <div class="form-group">
 		      <label for="email">Email:</label>
-		      <input type="email" class="form-control" id="email" name="email" value="<?= $user_session['email'] ?>">
+		      <input type="email" class="form-control" id="email" name="email" value="">
 		    </div>
 		    <button type="submit" class="btn btn-block btn-default">Update</button>
 		</form>

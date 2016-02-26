@@ -85,10 +85,10 @@ class Lets extends CI_Controller {
 		$this->load->view("dashboard", array('all_vents' => $all_vents));
 	}
 
-	public function view_profile($id){
-		$this->load->model('let');
-		$user_data = $this->let->get_user_by_id($id);
-		
+	public function view_profile(){
+		// $this->load->model('let');
+		// $user_data = $this->let->get_user_by_id($id);
+
 		$this->load->view('user_profile');
 	}
 
