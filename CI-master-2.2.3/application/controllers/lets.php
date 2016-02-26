@@ -12,7 +12,7 @@ class Lets extends CI_Controller {
 
 		$data = array("id" => $user['id'], "username"=> $user['username']);
 
-		$this->view_data['user_session'] = $this->user_session; 
+		$this->view_data['user_session'] = $this->user_session;
 	}
 
 
@@ -51,7 +51,7 @@ class Lets extends CI_Controller {
 		if($this->form_validation->run() === FALSE)
 		{
 			$this->session->set_flashdata("registration_errors", validation_errors());
-			redirect(base_url('/lets/login_page'));		
+			redirect(base_url('/lets/login_page'));
 		}
 		else
 		{
@@ -80,6 +80,7 @@ class Lets extends CI_Controller {
 	}
 
 	public function dashboard(){
+		$this->load->helper('date');
 		$this->load->model("let");
 		$all_vents = $this->let->get_all_vents();
 		$this->load->view("dashboard", array('all_vents' => $all_vents));
@@ -88,17 +89,19 @@ class Lets extends CI_Controller {
 	public function view_profile(){
 		// $this->load->model('let');
 		// $user_data = $this->let->get_user_by_id($id);
-
+		$this->load->helper('date');
 		$this->load->view('user_profile');
 	}
 
 
 	public function edit_page(){
+		$this->load->helper('date');
 		$this->load->view('edit_profile');
 	}
 
 
 	public function edit_profile($id){
+		$this->load->helper('date');
 		$this->load->model("let");
 		$user_data = $this->input->post();
 		$this->let->edit_profile($user_data, $id);
@@ -112,8 +115,9 @@ class Lets extends CI_Controller {
 	}
 
 	public function get_vents(){
+		$this->load->helper('date');
 		$this->load->model("let");
-		
+
 		$this->load->view("dashboard", array("all_vents"=>$all_vents));
 		// redirect('lets/dashboard', array("all_vents" => $all_vents));
 	}
@@ -121,10 +125,10 @@ class Lets extends CI_Controller {
 	public function add(){
 		$this->load->library("form_validation");
 		$this->form_validation->set_rules("vent", "Vent", "trim|required");
-		
+
 		if($this->form_validation->run() === FALSE){
 			$this->session->set_flashdata("registration_errors", validation_errors());
-			redirect(base_url('/lets/dashboard'));		
+			redirect(base_url('/lets/dashboard'));
 		}
 		else{
 		$this->load->model("let");
@@ -132,7 +136,8 @@ class Lets extends CI_Controller {
 				'content' => $this->input->post("vent"),
 				'category' => $this->input->post("category"),
 				'username'=> $this->session->userdata['username'],
-				'users_id' => $this->session->userdata['users_id']
+				'users_id' => $this->session->userdata['users_id'],
+				'created_at' => $this->session->userdata['created_at']
 		);
 		$add_vent = $this->let->add_vent($vents);
 		redirect('lets/dashboard');
