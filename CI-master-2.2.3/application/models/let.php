@@ -45,7 +45,7 @@ class Let extends CI_Model
 
 	public function add_vent($vents){
 		$query = "INSERT INTO vents ( content, category, created_at, updated_at, users_id) VALUES (?,?,?,?,?)";
-    $values = array($vents['content'], $vents['category'], date("Y-m-d"), date("Y-m-d"), $vents['users_id']);
+    $values = array($vents['content'], $vents['category'], date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $vents['users_id']);
     return $this->db->query($query, $values);
 	}
 
