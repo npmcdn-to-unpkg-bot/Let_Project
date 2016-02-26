@@ -9,6 +9,7 @@ class Let extends CI_Model
 	public function get_user($username){
 		return $this->db->query("SELECT * FROM users WHERE username= ?", array($username))->row_array();
 	}
+
 	public function insert_user($user_info){
 		$insert_user= "INSERT INTO users (first_name, last_name, username, email, password, created_at)
 		               VALUES (?, ?, ?, ?, ?, NOW())";
@@ -19,12 +20,12 @@ class Let extends CI_Model
 	}
 
 
-	// public function get_user_by_id($id){
-	// 	$get_user = "SELECT * from users WHERE id=?";
-	// 	$values= array($id);
-	// 	$this->db->query($get_user, $id);
-	// 	return $this->db->edit_id()->row_array();
-	// }
+	public function get_user_by_id(){
+		$get_user = "SELECT * from users WHERE id=?";
+		$values= array($id);
+		$this->db->query($get_user, $values);
+		return $this->db->query($get_user, $values)->row_array();
+	}
 
 	public function edit_profile($user_data, $id){
 		$update= "UPDATE users SET first_name=?, last_name=?, username=?, email=? WHERE id=?";
