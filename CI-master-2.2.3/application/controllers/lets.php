@@ -95,10 +95,13 @@ class Lets extends CI_Controller {
 		$this->load->view('user_profile', $this->view_data);
 	}
 
-	public function logout(){
-		$this->session->sess_destroy();
-		redirect('/');
+	public function get_user($id){
+		$this->load->model("let");
+		$get_user_data = $this->let->get_user_by_id($id); 
+
+
 	}
+
 
 	public function edit_page(){
 		$this->load->view('edit_profile', $this->view_data);
@@ -109,8 +112,12 @@ class Lets extends CI_Controller {
 		$this->load->model("let");
 		$user_data = $this->input->post();
 		$this->let->edit_profile($user_data, $id);
-
+		// $get_user_data = $this->let->get_user_by_id($user_data, $id);
 		redirect("lets/view_profile");
+	}
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect('/');
 	}
 
 }

@@ -72,7 +72,7 @@
 			<h1>Main complain page</h1>
 			 <form action="#" method="POST" role="form" class="col-md-6">
 				<div class="form-group">
-					<label for="sel1">What do you need to vent about?</label>
+					<label for="sel1">What do you like to vent about?</label>
 					<select class="form-control" id="sel1">
 						<option>Relationships</option>
 						<option>Family</option>
