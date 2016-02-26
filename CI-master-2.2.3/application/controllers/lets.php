@@ -8,7 +8,11 @@ class Lets extends CI_Controller {
 	{
 		parent::__construct();
 		// $this->output->enable_profiler();
-		$this->view_data['user_session'] = $this->user_session = $this->session->userdata("user_session");
+		$user =  $this->session->userdata("user_session");
+
+		$data = array("id" => $user['id'], "username"=> $user['id']);
+
+		$this->view_data['user_session'] = $this->user_session 
 	}
 
 	
@@ -64,7 +68,7 @@ class Lets extends CI_Controller {
 		if($this->form_validation->run() === FALSE)
 		{
 			$this->session->set_flashdata("registration_errors", validation_errors());
-			redirect(base_url('lets/dashboard'));
+			redirect(base_url('lets/login_page'));
 		}
 		else
 		{
@@ -75,7 +79,7 @@ class Lets extends CI_Controller {
 			if ($insert_user)
 			{
 				$this->session->set_userdata("user_session", $user_input);
-				redirect(base_url("/"));
+				redirect(base_url("lets/dashboard"));
 				
 			}
 			else
