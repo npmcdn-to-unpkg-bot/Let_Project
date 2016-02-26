@@ -15,7 +15,7 @@ class Lets extends CI_Controller {
 		$this->view_data['user_session'] = $this->user_session 
 	}
 
-	
+
 	public function index()
 	{
 		$this->load->view('welcome');
@@ -27,32 +27,15 @@ class Lets extends CI_Controller {
 
 	public function process_login()
 	{
-		$this->load->library("form_validation");
-		$this->form_validation->set_rules("username", "Username", "trim|required");
-		$this->form_validation->set_rules("password", "Password", "trim|min_length[8]|required|md5");
-
-		if($this->form_validation->run() === FALSE)
-		{
-			$this->session->set_flashdata("login_errors", validation_errors());
-			redirect(base_url('lets/login_page'));
-
-		}
-		else
-		{
-			$this->load->model("let");
-			$get_user= $this->let->get_user($this->input->post());
-
-			if($get_user)
-			{
-				$this->session->set_userdata("user_session", $get_user);
-				redirect(base_url("lets/dashboard"));
-			}
-			else
-			{
-				$this->session->set_flashdata("login_errors", "Incorrect username and/or password");
-				redirect(base_url());
-			}
-		}
+		$username = $this->input->post('username');
+		$this->load->model("let");
+		$get_user = $this->let->get_user($username);
+		$user = array(
+			'users_id' => $get_user['id'],
+			'username' => $get_user['username'],
+		);
+		$this->session->set_userdata($user);
+		$this->load->view('dashboard', $user);
 	}
 
 	public function process_registration()
@@ -79,8 +62,11 @@ class Lets extends CI_Controller {
 			if ($insert_user)
 			{
 				$this->session->set_userdata("user_session", $user_input);
+
 				redirect(base_url("lets/dashboard"));
-				
+
+
+
 			}
 			else
 			{
@@ -101,8 +87,7 @@ class Lets extends CI_Controller {
 
 	public function get_user($id){
 		$this->load->model("let");
-		$get_user_data = $this->let->get_user_by_id($id); 
-
+		$get_user_data = $this->let->get_user_by_id($id);
 
 	}
 
@@ -123,6 +108,25 @@ class Lets extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('/');
 	}
+	public function get_vents(){
+		$this->load->model("let");
+		$all_vents = $this->let->get_all_vents();
+		$this->load->view("dashboard", array("all_vents" => $all_vents));
+	}
+	public function add()
+	{
+			$this->load->model("let");
+			$vents = array(
+					'content' => $this->input->post("vent"),
+					'category' => $this->input->post("category"),
+					'username'=> $this->session->userdata['username'],
+					'users_id' => $this->session->userdata['users_id']
+			);
+			$add_vent = $this->let->add_vent($vents);
+			redirect("/lets/get_vents", $vents);
+
+	}
+
 
 }
 
