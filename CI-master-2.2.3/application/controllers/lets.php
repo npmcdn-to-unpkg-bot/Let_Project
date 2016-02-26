@@ -37,7 +37,7 @@ class Lets extends CI_Controller {
 			'username' => $get_user['username'],
 		);
 		$this->session->set_userdata($user);
-		$this->load->view('dashboard', $user);
+		redirect('/lets/dashboard', $user);
 	}
 
 	public function process_registration()
@@ -61,11 +61,16 @@ class Lets extends CI_Controller {
 			$user_input = $this->input->post();
 			$insert_user = $this->let->insert_user($user_input);
 
-			if ($insert_user)
-			{
-				$this->session->set_userdata("user_session", $user_input);
-
-				redirect(base_url("lets/dashboard"));
+			if ($insert_user){
+				$username = $this->input->post('username');
+				$this->load->model("let");
+				$get_user = $this->let->get_user($username);
+				$user = array(
+					'users_id' => $get_user['id'],
+					'username' => $get_user['username'],
+				);
+				$this->session->set_userdata($user);
+				redirect('/lets/dashboard', $user);
 			}
 			else
 			{
@@ -78,24 +83,20 @@ class Lets extends CI_Controller {
 
 	public function dashboard(){
 		$this->load->model("let");
-			$vents = array(
-					'content' => $this->input->post("vent"),
-					'category' => $this->input->post("category"),
-					'username'=> $this->session->userdata['username'],
-					'users_id' => $this->session->userdata['users_id']
-			);
-			$add_vent = $this->let->add_vent($vents);
-			$all_vents = $this->let->get_all_vents();
-			$this->load->view("dashboard", array('all_vents' => $all_vents), $this->view_data);
+		$all_vents = $this->let->get_all_vents();
+		$this->load->view("dashboard", array('all_vents' => $all_vents));
 	}
 
-	public function view_profile(){
-		$this->load->view('user_profile', $this->view_data);
+	public function view_profile($id){
+		$this->load->model('let');
+		$user_data = $this->let->get_user_by_id($id);
+		
+		$this->load->view('user_profile');
 	}
 
 
 	public function edit_page(){
-		$this->load->view('edit_profile', $this->view_data);
+		$this->load->view('edit_profile');
 	}
 
 

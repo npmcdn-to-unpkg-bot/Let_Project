@@ -68,11 +68,11 @@
 	</div>
 </header>
 <body>
-	<h2>Welcome <?= $this->session->userdata('first_name') ?>!</h2>
+	<h2>Welcome <?= $this->session->userdata('username') ?>!</h2>
 	<a href="/lets/edit_page" class="btn btn-default">Edit Your Profile</a>
 
 	<h3>User Information: </h3>
-	<p>First Name: <?= $this->session->userdata('first_name')?></p>
+	<p>First Name: <?= $user_data['first_name'] ?></p>
 	<p>Last Name: <?= $this->session->userdata('last_name')?></p>
 	<p>Username: <?= $this->session->userdata('username') ?></p>
 	<p>Email Address: <?= $this->session->userdata('email') ?></p>

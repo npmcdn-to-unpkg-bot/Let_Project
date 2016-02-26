@@ -71,6 +71,12 @@
 			<h1>Main complain page</h1>
 			 <form action="/lets/add" method="POST" role="form" class="col-md-6">
 					<div class="form-group">
+							<?php
+								if($this->session->flashdata("registration_errors"))
+								{
+									echo $this->session->flashdata("registration_errors");
+								}
+							?>	
 						<label for="sel1">What do you like to vent about?</label>
 
 						<select name= "category">
