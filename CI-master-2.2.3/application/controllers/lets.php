@@ -12,11 +12,9 @@ class Lets extends CI_Controller {
 
 		$data = array("id" => $user['id'], "username"=> $user['username']);
 
-<<<<<<< HEAD
+
 		$this->view_data['user_session'] = $this->user_session;
-=======
-		$this->view_data['user_session'] = $this->user_session; 
->>>>>>> b687c4f3bce55c29bc3aa68a328d5508ae76cd1d
+
 	}
 
 

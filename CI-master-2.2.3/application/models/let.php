@@ -36,19 +36,12 @@ class Let extends CI_Model
 	public function get_all_vents(){
 		return $this->db->query("SELECT username, content, vents.created_at, category FROM users JOIN vents ON users.id = vents.users_id;")->result_array();
 	}
-<<<<<<< HEAD
 	public function show($id)
 	{
 			$this->load->model("let"); //loads the model
 			$vents = $this->Course->get_all_vents();  //calls the get_course_by_id method
 			var_dump($vents);
-=======
 
-	public function show($id){
-		$this->load->model("let"); //loads the model
-		$vents = $this->Course->get_all_vents();  //calls the get_course_by_id method
-		var_dump($vents);
->>>>>>> b687c4f3bce55c29bc3aa68a328d5508ae76cd1d
 	}
 
 	public function add_vent($vents){
