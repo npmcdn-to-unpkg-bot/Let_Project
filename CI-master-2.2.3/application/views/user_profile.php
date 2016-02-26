@@ -58,7 +58,7 @@
 
 			<ul class="nav navbar-nav navbar-right">
 									</li>
-									<li><a href="/lets/view_profile">Hello, <?= $user_session['username'] ?></a>
+									<li><a href="/lets/view_profile">Hello, <?= $this->session->userdata('username') ?></a>
 									</li>
 									<li><a href="/lets/logout">Sign Out</a>
 									</li>
@@ -68,14 +68,14 @@
 	</div>
 </header>
 <body>
-	<h2>Welcome <?= $user_session['first_name']; ?>!</h2>
+	<h2>Welcome <?= $this->session->userdata('first_name') ?>!</h2>
 	<a href="/lets/edit_page" class="btn btn-default">Edit Your Profile</a>
 
 	<h3>User Information: </h3>
-	<p>First Name: <?= $user_session['first_name'] ?></p>
-	<p>Last Name: <?= $user_session['last_name'] ?></p>
-	<p>Username: <?= $user_session['username'] ?></p>
-	<p>Email Address: <?= $user_session['email'] ?></p>
+	<p>First Name: <?= $this->session->userdata('first_name')?></p>
+	<p>Last Name: <?= $this->session->userdata('last_name')?></p>
+	<p>Username: <?= $this->session->userdata('username') ?></p>
+	<p>Email Address: <?= $this->session->userdata('email') ?></p>
 
 	<h2>Your Vents: </h2>
 </body>
