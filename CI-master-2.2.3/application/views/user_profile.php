@@ -58,7 +58,7 @@
 
 			<ul class="nav navbar-nav navbar-right">
 									</li>
-									<li><h4 style="color:purple;"><b> Today is, <?= date("jS o, F Y"); ?></b></h4>
+									<li><h4 style="color:purple;"><b><?= date_default_timezone_set("America/Los_Angeles") ."The today is " . date("l, F j, Y H:i A"); ?></b></h4>
 									</li>
 									</li>
 									<li><a href="/lets/view_profile">Hello, <?= $this->session->userdata('username') ?></a>
@@ -76,7 +76,10 @@
 
 	<h3>User Information: </h3>
 	<p>First Name: </p>
+
 	<p>Last Name: <?= $this->session->userdata('last_name')?></p>
+	<p>Last Name: <?= $user['first_name'] ?></p>
+
 	<p>Username: <?= $this->session->userdata('username') ?></p>
 	<p>Email Address: <?= $this->session->userdata('email') ?></p>
 

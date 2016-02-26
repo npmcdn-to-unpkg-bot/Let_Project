@@ -20,10 +20,9 @@ class Let extends CI_Model
 	}
 
 
-	public function get_user_by_id(){
+	public function get_user_by_id($id){
 		$get_user = "SELECT * from users WHERE id=?";
 		$values= array($id);
-		$this->db->query($get_user, $values);
 		return $this->db->query($get_user, $values)->row_array();
 	}
 
