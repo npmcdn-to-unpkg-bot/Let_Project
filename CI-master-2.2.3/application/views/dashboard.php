@@ -53,7 +53,7 @@
 									</ul></li>
 							</ul>
 			<ul class="nav navbar-nav navbar-right">
-									<li><h4 style="color:purple;"><b><?= date_default_timezone_set("America/Los_Angeles") ."The today is " . date("l, F j, Y H:i A"); ?></b></h4>
+									<li><h4 style="color:purple;"><b><?= date_default_timezone_set("America/Los_Angeles") ."Today is" . date("F j, Y H:i A"); ?></b></h4>
 									</li>
 									<li><a href="/lets/view_profile">Hello, <?= $this->session->userdata('username') ?></a>
 									</li>
