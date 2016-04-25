@@ -43,23 +43,27 @@
 					</div>
 					<div class="collapse navbar-collapse navbar-menubuilder">
 							<ul class="nav navbar-nav navbar-left">
-									<li><a href="/">Home</a>
+									<li><a href="/lets/dashboard">Home</a>
 									</li>
-										<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Relationships</a></li>
-												<li><a href="#">Family</a></li>
-												<li><a href="#">Work</a></li>
-												<li><a href="#">School</a></li>
-												<li><a href="#">Money</a></li>
-											</ul></li>
+								<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Relationships</a></li>
+										<li><a href="#">Family</a></li>
+										<li><a href="#">Work</a></li>
+										<li><a href="#">School</a></li>
+										<li><a href="#">Money</a></li>
+										<li><a href="#">Miscellaneous</a></li>
+									</ul></li>
 							</ul>
 
 			<ul class="nav navbar-nav navbar-right">
 									</li>
-									<li><a href="Profile">Hello, User</a>
+									<li><h4 style="color:purple;"><b><?= date_default_timezone_set("America/Los_Angeles") ."Today is " . date("F j, Y H:i A"); ?></b></h4>
 									</li>
-									<li><a href="categories">Sign Out</a>
+									</li>
+									<li><a href="/lets/view_profile">Hello, <?= $this->session->userdata('username') ?></a>
+									</li>
+									<li><a href="/lets/logout">Sign Out</a>
 									</li>
 							</ul>
 					</div>
@@ -67,13 +71,17 @@
 	</div>
 </header>
 <body>
-	<h2>Welcome <?= $user_session['first_name']; ?>!</h2>
+	<h2>Welcome <?= $this->session->userdata('username') ?>!</h2>
+	<a href="/lets/edit_page" class="btn btn-default">Edit Your Profile</a>
 
 	<h3>User Information: </h3>
-	<p>First Name: <?= $user_session['first_name'] ?></p>
-	<p>Last Name: <?= $user_session['last_name'] ?></p>
-	<p>Username: <?= $user_session['username'] ?></p>
-	<p>Email Address: <?= $user_session['email'] ?></p>
+	<p>First Name: </p>
+
+	<p>Last Name: <?= $this->session->userdata('last_name')?></p>
+	<p>Last Name: <?= $user['first_name'] ?></p>
+
+	<p>Username: <?= $this->session->userdata('username') ?></p>
+	<p>Email Address: <?= $this->session->userdata('email') ?></p>
 
 	<h2>Your Vents: </h2>
 </body>

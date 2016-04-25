@@ -28,6 +28,9 @@
   			color: white;
   			width: 500px;
   		}
+  		input, text{
+  			color: black;
+  		}
 
   		.button{
   			color: black;

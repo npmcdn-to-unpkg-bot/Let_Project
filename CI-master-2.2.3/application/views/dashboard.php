@@ -27,6 +27,7 @@
 		});
 
 	</script>
+	<link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
 </head>
 <header>
 	<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
@@ -37,25 +38,26 @@
 					</div>
 					<div class="collapse navbar-collapse navbar-menubuilder">
 							<ul class="nav navbar-nav navbar-left">
-									<li><a href="/">Home</a>
-									</li>
-									<li><a href="Profile">Profile</a>
+								<li><a href="/lets/dashboard">Home</a>
+								</li>
+								<li><a href="/lets/view_profile">Profile</a>
 
-										<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Relationships</a></li>
-												<li><a href="#">Family</a></li>
-												<li><a href="#">Work</a></li>
-												<li><a href="#">School</a></li>
-												<li><a href="#">Money</a></li>
-											</ul></li>
+								<li> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Relationships</a></li>
+										<li><a href="#">Family</a></li>
+										<li><a href="#">Work</a></li>
+										<li><a href="#">School</a></li>
+										<li><a href="#">Money</a></li>
+										<li><a href="#">Miscellaneous</a></li>
+									</ul></li>
 							</ul>
-
 			<ul class="nav navbar-nav navbar-right">
+									<li><h4 style="color:purple;"><b><?= date_default_timezone_set("America/Los_Angeles") ."Today is" . date("F j, Y H:i A"); ?></b></h4>
 									</li>
-									<li><a href="Profile">Hello, User</a>
+									<li><a href="/lets/view_profile">Hello, <?= $this->session->userdata('username') ?></a>
 									</li>
-									<li><a href="categories">Sign Out</a>
+									<li><a href="/lets/logout">Sign Out</a>
 									</li>
 							</ul>
 					</div>
@@ -66,61 +68,48 @@
 
 	<div class='container'>
 
-		<div id="main" class="col-md-7">
+		<div id="main" class="col-md-6">
 			<h1>Main complain page</h1>
-			 <form action="#" method="POST" role="form" class="col-md-6">
-				<div class="form-group">
-					<label for="sel1">What do you need to vent about?</label>
-					<select class="form-control" id="sel1">
-						<option>Work</option>
-						<option>School</option>
-						<option>Relationships</option>
-						<option>Family</option>
-						<option>Money</option>
-						<option>Miscellaneous</option>
-					</select>
-				</div>
-				<div class="form-group">
-			  		<textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
-				</div>
-			    <button type="submit" class="btn btn-danger">Vent</button>
+			 <form action="/lets/add" method="POST" role="form" class="col-md-6">
+					<div class="form-group">
+							<?php
+								if($this->session->flashdata("registration_errors"))
+								{
+									echo $this->session->flashdata("registration_errors");
+								}
+							?>
+						<label for="sel1">What do you like to vent about?</label>
+
+						<select name= "category">
+							<option>Relationships</option>
+							<option>Family</option>
+							<option>Work</option>
+							<option>School</option>
+							<option>Money</option>
+							<option>Miscellaneous</option>
+						</select>
+					</div>
+					<div class="form-group">
+				  		<textarea class="form-control" name="vent" rows="5"></textarea>
+					</div>
+				    <button type="submit" class="btn btn-danger">Vent</button>
 			</form>
 
 			<div id="vents">
-				<h1>VENTS ARE GONNA GO HERE</h1>
+				 <?php foreach ($all_vents as $vent) { ?>
+					 <h4><?= $vent['username'] ?></h4>
+					 <h5><?= $vent['content'] ?></h5>
+					 <p>Category: <?= $vent['category'] ?></p>
+					 <p>Created at: <?= $vent['created_at'] ?></p>
+
+				 <?php } ?>
 			</div>
 
 		</div>
 
-		<div id="right" class="col-md-4">
-			<h1>Categories</h1>
-			<div id="categories">
-				 <div class="list-group">
-				  <a href="#" class="list-group-item">Work</a>
-				  <a href="#" class="list-group-item">School</a>
-				  <a href="#" class="list-group-item">Relationships</a>
-				  <a href="#" class="list-group-item">Family</a>
-				  <a href="#" class="list-group-item">Money</a>
-				  <a href="#" class="list-group-item">Miscellaneous</a>
-				</div>
-			</div>
-
-			<div id="twitter">
-				<h1>Twitter Feed</h1>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-				<p>TWEET HERE</p>
-			</div>
-
+		<div id="twitter">
+			<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hashtag/worksucks" data-widget-id="702244715836493824">#worksucks Tweets</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 
 	</div>

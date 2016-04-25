@@ -8,42 +8,46 @@ class Lets extends CI_Controller {
 	{
 		parent::__construct();
 		// $this->output->enable_profiler();
-		$this->view_data['user_session'] = $this->user_session = $this->session->userdata("user_session");
+		$user =  $this->session->userdata("user_session");
+
+		$data = array("id" => $user['id'], "username"=> $user['username']);
+
+		$this->view_data['user_session'] = $this->user_session;
+
+
 	}
 
-	
+
 	public function index()
 	{
 		$this->load->view('welcome');
 	}
 
+	public function login_page(){
+		$this->load->view('index');
+	}
+
 	public function process_login()
 	{
-		$this->load->library("form_validation");
-		$this->form_validation->set_rules("username", "Username", "trim|required");
-		$this->form_validation->set_rules("password", "Password", "trim|min_length[8]|required|md5");
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 
-		if($this->form_validation->run() === FALSE)
-		{
-			$this->session->set_flashdata("login_errors", validation_errors());
-			redirect(base_url());
-
+		if($this->form_validation->run() === FALSE){
+			$this->session->set_flashdata('login_errors', validation_errors());
+			redirect('/lets/login_page');
 		}
-		else
-		{
-			$this->load->model("let");
-			$get_user= $this->user->get_user($this->input->post());
 
-			if($get_user)
-			{
-				$this->session->set_userdata("user_session", $get_user);
-				redirect(base_url("lets/dashboard"));
-			}
-			else
-			{
-				$this->session->set_flashdata("login_errors", "Incorrect username and/or password");
-				redirect(base_url());
-			}
+		else{
+			$username = $this->input->post('username');
+			$this->load->model("let");
+			$get_user = $this->let->get_user($username);
+			$user = array(
+				'users_id' => $get_user['id'],
+				'username' => $get_user['username'],
+			);
+			$this->session->set_userdata($user);
+			redirect('/lets/dashboard', $user);
 		}
 	}
 
@@ -60,19 +64,24 @@ class Lets extends CI_Controller {
 		if($this->form_validation->run() === FALSE)
 		{
 			$this->session->set_flashdata("registration_errors", validation_errors());
-			redirect(base_url());
+			redirect(base_url('/lets/login_page'));
 		}
 		else
 		{
-			$this->load->model("user");
+			$this->load->model("let");
 			$user_input = $this->input->post();
-			$insert_user = $this->user->insert_user($user_input);
+			$insert_user = $this->let->insert_user($user_input);
 
-			if ($insert_user)
-			{
-				$this->session->set_userdata("user_session", $user_input);
-				redirect(base_url("/"));
-				
+			if ($insert_user){
+				$username = $this->input->post('username');
+				$this->load->model("let");
+				$get_user = $this->let->get_user($username);
+				$user = array(
+					'users_id' => $get_user['id'],
+					'username' => $get_user['username'],
+				);
+				$this->session->set_userdata($user);
+				redirect('/lets/dashboard', $user);
 			}
 			else
 			{
@@ -84,8 +93,70 @@ class Lets extends CI_Controller {
 	}
 
 	public function dashboard(){
-		$this->load->view('dashboard');
+		$this->load->helper('date');
+		$this->load->model("let");
+		$all_vents = $this->let->get_all_vents();
+		$this->load->view("dashboard", array('all_vents' => $all_vents));
 	}
+
+	public function view_profile(){
+		$this->load->model('let');
+		$user = $this->let->get_user_by_id($id);
+		$data = array(
+					'user' => $user
+					);
+		$this->load->helper('date');
+		$this->load->view('user_profile', $data);
+	}
+
+
+	public function edit_page(){
+		$this->load->helper('date');
+		$this->load->view('edit_profile');
+	}
+
+
+	public function edit_profile($id){
+		$this->load->helper('date');
+		$this->load->model("let");
+		$user_data = $this->input->post();
+		$this->let->edit_profile($user_data, $id);
+		// $get_user_data = $this->let->get_user_by_id($user_data, $id);
+		redirect("lets/view_profile");
+	}
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect('/');
+	}
+
+	public function get_vents(){
+		$this->load->helper('date');
+		$this->load->model("let");
+		$this->load->view("dashboard", array("all_vents"=>$all_vents));
+	}
+
+	public function add(){
+		$this->load->library("form_validation");
+		$this->form_validation->set_rules("vent", "Vent", "trim|required");
+
+		if($this->form_validation->run() === FALSE){
+			$this->session->set_flashdata("registration_errors", validation_errors());
+			redirect(base_url('/lets/dashboard'));
+		}
+		else{
+		$this->load->model("let");
+		$vents = array(
+				'content' => $this->input->post("vent"),
+				'category' => $this->input->post("category"),
+				'username'=> $this->session->userdata['username'],
+				'users_id' => $this->session->userdata['users_id'],
+				'created_at' => $this->session->userdata['created_at']
+		);
+		$add_vent = $this->let->add_vent($vents);
+		redirect('lets/dashboard');
+		}
+}
 
 
 }

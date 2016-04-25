@@ -31,15 +31,15 @@
 <body>
   <div class="background-wrap">
     <video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
-        <source src="/assets/pix/CliffAngry.mp4" type="video/mp4">
+        <source src="/assets/pix/SonyaFrustrated.mp4" type="video/mp4">
           Video not supported
     </video>
   </div>
 <div class="content">
 
-  <h1>Welcome</h1>
+  <h1>Let it Go</h1>
   <p>Welcome to let it go, the place to express yourself.</p>
-
+  <a href="/lets/login_page" class="btn btn-default" id="login_button">Login or Register</a>
 
 </div>
 
