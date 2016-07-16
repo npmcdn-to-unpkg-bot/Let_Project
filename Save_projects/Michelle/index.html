@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MichelkaLove</title>
+    <!--  jQuery CDN -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <!--  //materialize CDN -->
+   <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+ <!--  Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+ <!--  my CSS -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+   <script type="text/javascript">
+      $(document).ready(function(){
+        // $('.button-collapse').sideNav({
+        //   menuWidth: 300, // Default is 240
+        //   edge: 'right', // Choose the horizontal origin
+        //   closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        // });
+        // Initialize collapse button
+        $(".button-collapse").sideNav();
+          // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+        $('.collapsible').collapsible();
+      });
+   </script>
+</head>
+<body>
+
+
+   <!--  Navbar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo">MichelkaLove</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse">Menu</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li class="gallery_tab">
+          <a href="#" class="Gallery">Gallery</a>
+            <div class="gallery_tab-content">
+              <a href="views/fashion.html">Fashion</a>
+              <a href="views/lifestyle.html">Lifestyle</a>
+            </div>
+        </li>
+        <li><a href="views/about.html">About</a></li>
+        <li><a href="views/contact.html">Contact Me</a></li>
+      </ul>
+
+       <!--  Mobile -->
+      <ul id="mobile-demo" class="side-nav #ef9a9a red lighten-3">
+        <li><a href="index.html">Home</a></li>
+        <li class="gallery_tab">
+          <a href="#" class="side_gallery">Gallery</a>
+            <div class="gallery_tab-content">
+              <a href="views/fashion.html">Fashion</a>
+              <a href="views/lifestyle.html">Lifestyle</a>
+            </div>
+        </li>
+        <li><a href="views/about.html">About</a></li>
+        <li><a href="views/contact.html">Contact Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+ <!--  Body -->
+  <main>
+    <div class="motto">
+      <p>Energy~Elegance~Allure</p>
+    </div>
+  </main>
+
+
+  <!--   Footer -->
+  <footer class="page-footer">
+    <div class="footer-copyright">
+    <!--   <div class="container"> -->
+        <div class="copyright">
+          &copy2016 MichelkaLove
+        </div>
+        <div class="links">
+          <a href="https://www.facebook.com" class="grey-text text-lighten-4 right"><img src='images/facebook.png' width='30px' height='30px'></a>
+
+          <a href="https://www.instagram.com/micherachel/?hl=en" class="grey-text text-lighten-4 right"><img src='images/instagram.png' width='30px' height='30px'></a>
+
+          <a href="https://www.twitter.com" class="grey-text text-lighten-4 right"><img src='images/twitter.png' width='30px' height='30px'></a>
+        </div>
+
+     <!--  </div> -->
+    </div>
+  </footer>
+
+</body>
+</html>

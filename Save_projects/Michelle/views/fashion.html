@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fashion</title>
+      <!--  jQuery CDN -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <!--  //materialize CDN -->
+   <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+ <!--  my CSS -->
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+  <!--   jQuery -->
+  <script type="text/javascript">
+      $(document).ready(function(){
+
+        $(".button-collapse").sideNav();
+
+        $('.collapsible').collapsible();
+      });
+   </script>
+</head>
+<body>
+
+   <!--  Navbar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="../index.html" class="brand-logo">MichelkaLove</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse">Menu</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="../index.html">Home</a></li>
+        <li class="gallery_tab">
+          <a href="#" class="Gallery">Gallery</a>
+            <div class="gallery_tab-content">
+              <a href="fashion.html">Fashion</a>
+              <a href="lifestyle.html">Lifestyle</a>
+            </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+
+        <!--  Mobile -->
+      <ul id="mobile-demo" class="side-nav #ef9a9a red lighten-3">
+        <li><a href="../index.html">Home</a></li>
+        <li class="gallery_tab">
+          <a href="#" class="side_gallery">Gallery</a>
+            <div class="gallery_tab-content">
+              <a href="fashion.html">Fashion</a>
+              <a href="lifestyle.html">Lifestyle</a>
+            </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<!--   Gallery Body -->
+<div class="gallery_body">
+      <div id="title_slot">
+        <h2>Fashion Gallery</h2>
+      </div>
+      <div class="gallery">
+        <a tabindex="1"><img src="../images/bench.jpg"></a>
+        <a tabindex="1"><img src="../images/black_dress.jpg"></a>
+        <a tabindex="1"><img src="../images/floral.jpg"></a>
+        <a tabindex="1"><img src="../images/headshot.jpg"></a>
+        <a tabindex="1"><img src="../images/button_down.jpg"></a>
+        <a tabindex="1"><img src="../images/pointy-toe.jpg"></a>
+        <a tabindex="1"><img src="../images/red_dress.jpg"></a>
+
+
+    <span class="closed">+</span>
+    <span class="closed-layer"></span>
+  </div>
+    </div>
+
+
+
+
+  <!--   Footer -->
+  <footer class="page-footer">
+    <div class="footer-copyright">
+    <!--   <div class="container"> -->
+        <div class="copyright">
+          &copy2016 MichelkaLove
+        </div>
+        <div class="links">
+          <a href="https://www.facebook.com" class="grey-text text-lighten-4 right"><img src='../images/facebook.png' width='30px' height='30px'></a>
+
+          <a href="https://www.instagram.com/micherachel/?hl=en" class="grey-text text-lighten-4 right"><img src='../images/instagram.png' width='30px' height='30px'></a>
+
+          <a href="https://www.twitter.com" class="grey-text text-lighten-4 right"><img src='../images/twitter.png' width='30px' height='30px'></a>
+        </div>
+
+     <!--  </div> -->
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
+
+
+<!-- Center Gallery divs -->
+<!-- Post on reddit, subreddit critique (design critique)
+responsive design -->
+<!-- Make thumbnail photo perfect square -->
+<!-- try photo over about text -->
+<!-- aspect ratio -->

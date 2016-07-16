@@ -1,0 +1,301 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+/*Hamburger*/
+/*@media screen and (max-width:550px){
+
+}*/
+main {
+    flex: 1 0 auto;
+    background-image: url('images/green.jpg');
+    background-size: cover;
+}
+.motto{
+   font-family: 'Galada', cursive;
+   font-size: 55px;
+   text-align: center;
+   color: white;
+   margin-top: 12%;
+}
+footer.page-footer{
+    margin: 0px;
+    padding: 0px;
+}
+.brand-logo{
+    margin-left: 15px;
+}
+.copyright{
+    width:25%;
+    display: inline-block;
+    padding-left: 1%
+}
+.links{
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    /*height: 60%;*/
+    padding-top: 1%;
+}
+.links a{
+    margin-left: 5%;
+}
+/*Dropdown Menu*/
+
+li a, .gallery {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    /*padding: 14px 16px;*/
+    text-decoration: none;
+}
+li a:hover, .gallery_tab:hover .gallery {
+ /*   background-color: red;*/
+}
+li.gallery_tab {
+    display: inline-block;
+}
+.gallery_tab-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+.gallery_tab-content a {
+    color: black;
+    /*padding: 6px 16px;*/
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.gallery_tab-content a:hover {
+    background-color: #f1f1f1;
+}
+.gallery_tab:hover .gallery_tab-content {
+    display: block;
+}
+
+/*Sidebar*/
+.button-collapse{
+    margin-left: 1%;
+}
+.side_gallery{
+    text-align: center;
+    width: 240px;
+}
+.side_gallery_tab-content{
+    width: 240px;
+}
+#mobile-demo{
+    color: white;
+}
+
+/*<!-- About Page -->*/
+.about_body{
+     flex: 1 0 auto;
+     background-image: url('images/beach.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     text-align: center;
+}
+.thumbnail{
+    display: block;
+    width: 20%;
+    height: 20%;
+    margin: 4% auto;
+    border-radius: 100%;
+    vertical-align: top;
+    border: 5px solid white;
+    /*box-shadow: 9px 6px 16px 7px rgba(0,0,0,0.3);*/
+
+}
+.about_text{
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    vertical-align: middle;
+    border-radius: 7px;
+    width: 50%;
+    height: 60%;
+    margin: 5% auto;
+   /* margin-top: 6%;
+    margin-bottom: 20%;*/
+   /* margin-right: 25%;*/
+   /* margin-left: 10%;*/
+    padding: 1%;
+    position: relative;
+    display: block;
+}
+
+/*Contact Page*/
+.contact_body{
+     flex: 1 0 auto;
+     background-image: url('images/palm.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     text-align: center;
+}
+.contact_text{
+    background-color: rgba(0,0,0,0.6);
+    color:white;
+    vertical-align: middle;
+    border-radius: 7px;
+    width: 50%;
+    height: 60%;
+    margin-right: 20%;
+    margin-left: 30%;
+    margin-top: 6%;
+    padding-top: 5px;
+}
+
+
+
+
+
+/*Gallery Page*/
+h2{
+    text-align: center;
+}
+.gallery_body{
+    background: #ccc;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+:focus{
+    outline:none;
+}
+.gallery{
+    margin:20px auto;
+    width:900px;
+    height:640px;
+    position: relative;
+}
+
+.gallery_body a{
+    display:inline-block;
+    width:200px;
+    height:141px;
+    position:relative;
+    border:5px solid #fff;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.gallery_body a img{
+    display:block;
+    width:100%;
+    height:100%;
+    -webkit-transition-property:width, height, top, bottom, left, right, z-index;
+    -webkit-transition-duration:2s;
+    -moz-transition-property:width, height, top, bottom, left, right, z-index;
+    -moz-transition-duration:2s;
+    -o-transition-property:width, height, top, bottom, left, right, z-index;
+    -o-transition-duration:2s;
+    transition-property:width, height, top, bottom, left, right, z-index;
+    transition-duration:2s;
+    position:absolute;
+    z-index:1;
+    top:0px;
+    left:0px;
+    cursor:pointer;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.closed{
+    position:absolute;
+    top:85px;
+    right:195px;
+    display:none;
+    text-align:center;
+    font-weight:bold;
+    font-size:70px;
+    color:#555;
+    width:20px;
+    height:20px;
+    text-shadow:0px 0px 5px #fff;
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+    cursor:pointer;
+    z-index:30;
+}
+.closed-layer{
+    display:none;
+    position:absolute;
+    top:140px;
+    left:150px;
+    width:500px;
+    height:352px;
+    background:transparent;
+    z-index:30;
+}
+
+.gallery_body a:focus~.closed, a:focus~.closed-layer{
+    display:block;
+}
+
+
+.gallery_body a:focus{
+    border:none;
+}
+
+.gallery_body a:focus img{
+    width:250%;
+    height:250%;
+    position:absolute;
+    box-shadow:0 0 15px 2px #000;
+    -moz-box-shadow:0 0 15px 2px #000;
+    -webkit-box-shadow:0 0 15px 2px #000;
+    -webkit-transition-property:width, height, top, bottom, left, right, z-index;
+    -webkit-transition-duration:2s;
+    -moz-transition-property:width, height, top, bottom, left, right, z-index;
+    -moz-transition-duration:2s;
+    -o-transition-property:width, height, top, bottom, left, right, z-index;
+    -o-transition-duration:2s;
+    transition-property:width, height, top, bottom, left, right, z-index;
+    transition-duration:2s;
+    cursor:default;
+    z-index:25;
+}
+
+
+
+.gallery_body a:focus:nth-child(4n+1) img{
+    left:150px;
+}
+
+.gallery_body a:focus:nth-child(4n+2) img{
+    left:-50px;
+}
+
+.gallery_body a:focus:nth-child(4n+3) img{
+    left:-250px;
+}
+
+.gallery_body a:focus:nth-child(4n+4) img{
+    left:-460px;
+}
+
+.gallery_body a:focus:nth-child(-n+4) img{
+    top:140px;
+}
+
+.gallery_body a:focus:nth-child(n+9) img{
+    top:-150px;
+}
+
+.gallery_body a:focus:nth-child(n+13) img{
+    top:-295px;
+}
+
+#title_slot{
+    color: black;
+    margin-left: 5px;
+}
